@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { BackgroundImage } from './components/background-image'
 import { BgImageDropdown } from './components/dropdowns/bg-image-dropdown'
 import { Navbar } from './components/navbar'
+import HydrationZustand from './components/hydration-zustand'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,9 +22,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Navbar />
-                {children}
-                <BackgroundImage />
+                <HydrationZustand>
+                    <Navbar />
+                    {children}
+                    <BackgroundImage />
+                </HydrationZustand>
             </body>
         </html>
     )

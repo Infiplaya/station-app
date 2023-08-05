@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 interface BgImageState {
     bgImage: string
@@ -10,9 +11,11 @@ export const bgOptions = [
     { url: '/nature-bg.avif', label: 'Nature' },
 ]
 
-const useImageStore = create<BgImageState>()((set) => ({
+const useImageStore = create<BgImageState>()(persist((set) => ({
     bgImage: '/anime-bg.png',
     changeImage: (newImage) => set({ bgImage: newImage }),
+}), {
+    name: 'image-storage'
 }))
 
 export const useBgImage = () => useImageStore((state) => state.bgImage)

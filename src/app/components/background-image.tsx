@@ -6,6 +6,7 @@ import styles from "@/app/page.module.css"
 
 export function BackgroundImage() {
     const imageSrc = useBgImage()
+    console.log(imageSrc)
     return (
         <div className={styles.bgImage}>
             <Image
@@ -15,6 +16,7 @@ export function BackgroundImage() {
                 quality={100}
                 alt="bg-image"
             />
+            {imageSrc}
         </div>
     )
 }
