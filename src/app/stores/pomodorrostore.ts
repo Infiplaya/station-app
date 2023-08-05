@@ -12,6 +12,7 @@ interface Actions {
     startTimer: () => void
     pauseTimer: () => void
     resetTimer: () => void
+    skipTimer: () => void
     updateTimer: () => void
     startBreak: () => void
     startWork: () => void
@@ -34,6 +35,12 @@ export const useTimerStore = create<TimerState>((set) => ({
             set((state) => ({
                 isActive: false,
                 timer: state.status == 'break' ? DEFAULT_BREAK : DEFAULT_TIMER,
+            })),
+        skipTimer: () =>
+            set((state) => ({
+                isActive: false,
+                timer: state.status == 'break' ? DEFAULT_TIMER : DEFAULT_BREAK,
+                status: state.status == 'break' ? 'work' : 'break',
             })),
         updateTimer: () => set((state) => ({ timer: state.timer - 1 })),
         updateSessionCount: () =>
