@@ -1,6 +1,4 @@
-import Image from 'next/image'
-import { BgImageDropdown } from './components/dropdowns/bg-image-dropdown'
-import { MusicPlayer } from './components/music-player/music-player'
+import { MusicPlayersList } from './components/music-player/players-list'
 import { Pomodoro } from './components/pomodoro/pomodoro'
 import { PomodoroProgress } from './components/pomodoro/progress/progress'
 import styles from './page.module.css'
@@ -10,7 +8,7 @@ export default function Home() {
         <main className={styles.main}>
             <PomodoroProgress />
             <Pomodoro />
-            <MusicPlayer />
+            <MusicPlayersList />
         </main>
     )
 }

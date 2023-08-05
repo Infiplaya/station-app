@@ -1,8 +1,19 @@
 'use client'
-import { Card } from '../ui/card'
 import YouTube, { YouTubeProps } from 'react-youtube'
+import { useState } from 'react'
 
-export function MusicPlayer() {
+export function MusicPlayer({
+    id,
+    handlePlayerClick,
+    index,
+    activePlayer,
+}: {
+    id: string
+    handlePlayerClick: (index: number) => void
+    index: number
+    activePlayer: number
+}) {
+    const [isPlaying, setIsPlaying] = useState(false)
 
     const opts: YouTubeProps['opts'] = {
         height: '390',
@@ -12,13 +23,27 @@ export function MusicPlayer() {
         },
     }
 
+    function handlePlay() {
+        setIsPlaying(true)
+        handlePlayerClick(index)
+    }
+
+    function handleStop() {
+        setIsPlaying(false)
+        handlePlayerClick(index)
+    }
+
     return (
-        <Card>
-            <h3>Youtube Music</h3>
-            <YouTube
-                videoId="jfKfPfyJRdk"
-                opts={opts}
-            />
-        </Card>
+        <>
+            {isPlaying && activePlayer == index ? (
+                <button onClick={handleStop}>Pause</button>
+            ) : (
+                <button onClick={handlePlay}>Play</button>
+            )}
+
+            {isPlaying && activePlayer == index ? (
+                <YouTube videoId={id} style={{ display: 'none' }} opts={opts} />
+            ) : null}
+        </>
     )
 }
