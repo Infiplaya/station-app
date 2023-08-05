@@ -4,12 +4,12 @@ import {
     useTimerActive,
     useTimerSessionCount,
     useTimerStatus,
-} from '@/app/stores/pomodorrostore'
+} from '@/app/stores/pomodorostore'
 import { Timer } from './timer/timer'
 import { TimerControls } from './timer-controls/timer-controls'
 import styles from '@/app/page.module.css'
 
-export function Pomodorro() {
+export function Pomodoro() {
     const isActive = useTimerActive()
     const sessionCount = useTimerSessionCount()
     const status = useTimerStatus()

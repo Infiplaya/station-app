@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { Pomodorro } from './components/pomodorro/pomodorro'
+import { Pomodoro } from './components/pomodoro/pomodoro'
+import { PomodoroProgress } from './components/pomodoro/progress/progress'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -14,7 +15,8 @@ export default function Home() {
                     alt="bg-image"
                 />
             </div>
-            <Pomodorro />
+            <PomodoroProgress />
+            <Pomodoro />
         </main>
     )
 }

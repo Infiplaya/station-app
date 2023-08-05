@@ -5,10 +5,10 @@ import {
     useTimerActions,
     useTimerActive,
     useTimerStatus,
-} from '@/app/stores/pomodorrostore'
+} from '@/app/stores/pomodorostore'
 import { SkipForward } from 'lucide-react'
 import { useEffect } from 'react'
-import styles from '@/app/components/pomodorro/timer/timer.module.css'
+import styles from '@/app/components/pomodoro/timer/timer.module.css'
 
 export function Timer() {
     const timer = useTimer()

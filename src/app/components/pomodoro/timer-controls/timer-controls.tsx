@@ -1,7 +1,7 @@
 'use client'
-import styles from "@/app/components/pomodorro/timer-controls/timer-controls.module.css"
+import styles from "@/app/components/pomodoro/timer-controls/timer-controls.module.css"
 
-import { useTimerActions} from '@/app/stores/pomodorrostore'
+import { useTimerActions} from '@/app/stores/pomodorostore'
 
 export function TimerControls() {
     const actions = useTimerActions()
