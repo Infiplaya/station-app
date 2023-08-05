@@ -15,4 +15,7 @@ export const useChangeCurrentSongId = () =>
 export const useCurrentSongId = () =>
     useMusicStore((state) => state.currentSongId)
 
-export const youtubeIds = ['jfKfPfyJRdk', '4xDzrJKXOOY']
+export const youtubeIds = [
+    { id: 'jfKfPfyJRdk', label: 'Lofi Hip-Hop' },
+    { id: '4xDzrJKXOOY', label: 'Lofi Syntwave' },
+]

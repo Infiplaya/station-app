@@ -7,11 +7,13 @@ export function MusicPlayer({
     handlePlayerClick,
     index,
     activePlayer,
+    label,
 }: {
     id: string
     handlePlayerClick: (index: number) => void
     index: number
     activePlayer: number
+    label: string
 }) {
     const [isPlaying, setIsPlaying] = useState(false)
 
@@ -40,6 +42,8 @@ export function MusicPlayer({
             ) : (
                 <button onClick={handlePlay}>Play</button>
             )}
+
+            <p>{label}</p>
 
             {isPlaying && activePlayer == index ? (
                 <YouTube videoId={id} style={{ display: 'none' }} opts={opts} />

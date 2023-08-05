@@ -13,10 +13,11 @@ export function MusicPlayersList() {
     return (
         <Card>
             <h3>Play Something</h3>
-            {youtubeIds.map((id, index) => (
-                <div key={id}>
+            {youtubeIds.map((station, index) => (
+                <div key={station.id}>
                     <MusicPlayer
-                        id={id}
+                        id={station.id}
+                        label={station.label}
                         activePlayer={activePlayer}
                         index={index}
                         handlePlayerClick={handlePlayerClick}
