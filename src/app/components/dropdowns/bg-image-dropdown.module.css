@@ -1,0 +1,47 @@
+.dropdownButton {
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dropdownContent {
+    min-width: 180px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    padding: 5px;
+    box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dropdownItem {
+    font-size: 13px;
+    line-height: 1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    padding: 5px 5px;
+    position: relative;
+    user-select: none;
+    outline: none;
+}
+
+.dropdownItem[data-highlighted] {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.selectedItem {
+    background-color: rgba(var(--primary-rgb), 0.5);
+    backdrop-filter: saturate(180%);
+}

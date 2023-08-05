@@ -10,7 +10,6 @@ import { TimerControls } from './timer-controls/timer-controls'
 import styles from '@/app/page.module.css'
 
 export function Pomodoro() {
-    const isActive = useTimerActive()
     const sessionCount = useTimerSessionCount()
     const status = useTimerStatus()
     return (

@@ -2,6 +2,9 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
+import { BackgroundImage } from './components/background-image'
+import { BgImageDropdown } from './components/dropdowns/bg-image-dropdown'
+import { Navbar } from './components/navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,16 +21,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
-                <div>
-                    <Image
-                        src="/anime-bg.png"
-                        layout="fill"
-                        objectFit="cover"
-                        quality={100}
-                        alt="bg-image"
-                    />
-                </div>
+                <Navbar />
                 {children}
+                <BackgroundImage />
             </body>
         </html>
     )

@@ -25,7 +25,7 @@ interface Actions {
 const DEFAULT_TIMER = 10 * 60
 const DEFAULT_BREAK = 5 * 60
 
-export const useTimerStore = create<TimerState>((set) => ({
+const useTimerStore = create<TimerState>()((set) => ({
     status: 'work',
     defaultTimer: DEFAULT_TIMER,
     defaultBreak: DEFAULT_BREAK,

@@ -12,8 +12,8 @@
 
 .skipIcon {
     cursor: pointer;
-    width: 2rem;
-    height: 2rem;
+    width: 1.75rem;
+    height: 1.75rem;
     background-color: rgba(0, 0, 0, 0.30);
     border-radius: 4px;
     padding: 0.25rem;
