@@ -18,9 +18,8 @@ export function Pomodoro() {
             <Timer />
             <TimerControls />
             <div style={{ marginTop: '1rem' }}>
-                {isActive ? 'Timer Active' : 'Timer Stopped'}
                 <p>Session #{sessionCount}</p>
-                <p>Status: {status}</p>
+                <p>{status.toLocaleUpperCase()}</p>
             </div>
         </div>
     )

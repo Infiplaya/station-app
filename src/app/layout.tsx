@@ -18,6 +18,15 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>
+                <div>
+                    <Image
+                        src="/anime-bg.png"
+                        layout="fill"
+                        objectFit="cover"
+                        quality={100}
+                        alt="bg-image"
+                    />
+                </div>
                 {children}
             </body>
         </html>

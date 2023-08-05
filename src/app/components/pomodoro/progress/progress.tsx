@@ -13,7 +13,8 @@ export function PomodoroProgress() {
     const [progress, setProgress] = useState(0)
     const currentTimer = useTimer()
     const baseTimer = useDefaultTimer()
-    const isActive = useTimerActive()
+    const timerStarted = useTimerActive()
+    const isActive = currentTimer != baseTimer || timerStarted
 
     useEffect(() => {
         const delta = (currentTimer / baseTimer) * 100
