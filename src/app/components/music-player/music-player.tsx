@@ -8,9 +8,9 @@ import {
 } from '@/app/stores/music-store'
 import { ControlVolume } from './control-volume/control-volume'
 import { Pause, Play } from 'lucide-react'
-import styles from '@/app/components/music-player/music-player.module.css'
 import iconStyles from '@/app/page.module.css'
 import { toast } from 'sonner'
+import { MusicInfo } from './music-info'
 
 
 export function MusicPlayer({ id, label }: { id: string; label: string }) {
