@@ -11,10 +11,11 @@ export function BackgroundImage() {
         <div className={styles.bgImage}>
             <Image
                 src={imageSrc}
-                layout="fill"
-                objectFit="cover"
+                fill={true}
                 quality={100}
+                style={{objectFit: "cover"}}
                 alt="bg-image"
+                priority={true}
             />
             {imageSrc}
         </div>

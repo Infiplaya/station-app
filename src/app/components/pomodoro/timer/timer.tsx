@@ -9,6 +9,7 @@ import {
 import { SkipForward } from 'lucide-react'
 import { useEffect } from 'react'
 import styles from '@/app/components/pomodoro/timer/timer.module.css'
+import iconStyles from '@/app/page.module.css'
 
 export function Timer() {
     const timer = useTimer()
@@ -51,7 +52,7 @@ export function Timer() {
     return (
         <div className={styles.timerWrapper}>
             <h3 className={styles.timer}>{secondsToMinutes(timer)}</h3>
-            <SkipForward onClick={skipTimer} className={styles.skipIcon} />
+            <SkipForward onClick={skipTimer} className={iconStyles.icon} />
         </div>
     )
 }

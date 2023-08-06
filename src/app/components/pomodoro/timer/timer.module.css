@@ -9,17 +9,3 @@
     justify-content: center;
     gap: 1.5rem;
 }
-
-.skipIcon {
-    cursor: pointer;
-    width: 1.75rem;
-    height: 1.75rem;
-    background-color: rgba(0, 0, 0, 0.30);
-    border-radius: 4px;
-    padding: 0.25rem;
-    transition: 0.2s;
-}
-
-.skipIcon:hover {
-    background-color: rgba(0, 0, 0, 0.50); 
-}

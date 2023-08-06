@@ -8,10 +8,7 @@ export function MusicPlayersList() {
             <h3>Play Something</h3>
             {youtubeIds.map((station, index) => (
                 <div key={station.id}>
-                    <MusicPlayer
-                        id={station.id}
-                        label={station.label}
-                    />
+                    <MusicPlayer id={station.id} label={station.label} />
                 </div>
             ))}
         </Card>

@@ -1,7 +1,8 @@
 import { useAudioVolume, useChangeVolume } from '@/app/stores/music-store'
 import * as Slider from '@radix-ui/react-slider'
-import styles from '@/app/components/music-player/control-volume.module.css'
+import styles from '@/app/components/music-player/control-volume/control-volume.module.css'
 import { YouTubePlayer } from 'react-youtube'
+
 
 export function ControlVolume({ player }: { player: YouTubePlayer }) {
     const audioVolume = useAudioVolume()

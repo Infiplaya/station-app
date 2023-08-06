@@ -1,14 +1,16 @@
 'use client'
 import YouTube, { YouTubeProps, YouTubePlayer } from 'react-youtube'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
     useAudioVolume,
     useChangeCurrentSongId,
-    useChangeVolume,
     useCurrentSongId,
 } from '@/app/stores/music-store'
-import { ControlVolume } from './control-volume'
+import { ControlVolume } from './control-volume/control-volume'
 import { Pause, Play } from 'lucide-react'
+import styles from '@/app/components/music-player/music-player.module.css'
+import iconStyles from '@/app/page.module.css'
+
 
 export function MusicPlayer({ id, label }: { id: string; label: string }) {
     const [isPlaying, setIsPlaying] = useState(false)
@@ -46,9 +48,7 @@ export function MusicPlayer({ id, label }: { id: string; label: string }) {
         return (
             <>
                 <h4>{label}</h4>
-                <button onClick={handleStop}>
-                    <Pause />
-                </button>
+                <Pause className={iconStyles.icon} onClick={handleStop} />
                 <ControlVolume player={player} />
                 {audioVolume}
                 <YouTube
@@ -64,9 +64,7 @@ export function MusicPlayer({ id, label }: { id: string; label: string }) {
     return (
         <>
             <h4>{label}</h4>
-            <button onClick={handlePlay}>
-                <Play />
-            </button>
+            <Play className={iconStyles.icon} onClick={handlePlay} />
         </>
     )
 }

@@ -31,3 +31,18 @@
 .card button:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.icon {
+    cursor: pointer;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: rgba(0, 0, 0, 0.30);
+    border-radius: 4px;
+    color: rgb(var(--gray-rgb));
+    padding: 0.4rem;
+    transition: 0.2s;
+}
+
+.icon:hover {
+    background-color: rgba(0, 0, 0, 0.50); 
+}
