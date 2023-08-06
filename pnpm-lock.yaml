@@ -7,6 +7,7 @@ specifiers:
   '@types/node': 20.4.8
   '@types/react': 18.2.18
   '@types/react-dom': 18.2.7
+  '@types/uuid': ^9.0.2
   eslint: 8.46.0
   eslint-config-next: 13.4.12
   lucide-react: ^0.263.1
@@ -15,6 +16,7 @@ specifiers:
   react-dom: 18.2.0
   react-youtube: ^10.1.0
   typescript: 5.1.6
+  uuid: ^9.0.0
   zustand: ^4.4.0
 
 dependencies:
@@ -32,7 +34,11 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-youtube: 10.1.0_react@18.2.0
   typescript: 5.1.6
+  uuid: 9.0.0
   zustand: 4.4.0_fzrd6ivowi4azn3madm57eamia
+
+devDependencies:
+  '@types/uuid': 9.0.2
 
 packages:
 
@@ -836,6 +842,10 @@ packages:
   /@types/scheduler/0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
     dev: false
+
+  /@types/uuid/9.0.2:
+    resolution: {integrity: sha512-kNnC1GFBLuhImSnV7w4njQkUiJi0ZXUycu1rUaouPqiKlXkh77JKgdRnTAp1x5eBwcIwbtI+3otwzuIDEuDoxQ==}
+    dev: true
 
   /@typescript-eslint/parser/5.62.0_7haavtekmro7ptbnqmctjaodju:
     resolution: {integrity: sha512-VlJEV0fOQ7BExOsHYAGrgbEiZoi8D+Bl2+f6V2RrXerRSylnp+ZBHmPvaIa8cz0Ajx7WO7Z5RqfgYg7ED1nRhA==}
@@ -3015,6 +3025,11 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
+    dev: false
+
+  /uuid/9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
     dev: false
 
   /watchpack/2.4.0:

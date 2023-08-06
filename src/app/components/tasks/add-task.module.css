@@ -1,0 +1,49 @@
+.Input,
+.Textarea {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+
+  font-size: 15px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 1px black;
+}
+.Input:hover,
+.Textarea:hover {
+  box-shadow: 0 0 0 1px black;
+}
+.Input:focus,
+.Textarea:focus {
+  box-shadow: 0 0 0 2px black;
+}
+.Input::selection,
+.Textarea::selection {
+  background-color: black;
+  color: white;
+}
+
+.Input {
+  padding: 0 10px;
+  height: 35px;
+  line-height: 1;
+}
+
+.Textarea {
+  resize: none;
+  padding: 10px;
+}
+
+.InputsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.Label {
+  margin-bottom: 0.5rem;
+  display: block;
+}

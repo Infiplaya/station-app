@@ -1,6 +1,7 @@
 import { MusicPlayersList } from './components/music-player/players-list'
 import { Pomodoro } from './components/pomodoro/pomodoro'
 import { PomodoroProgress } from './components/pomodoro/progress/progress'
+import { TaskList } from './components/tasks/task-list'
 import styles from './page.module.css'
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
             <PomodoroProgress />
             <Pomodoro />
             <MusicPlayersList />
+            <TaskList />
         </main>
     )
 }
