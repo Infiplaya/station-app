@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware'
 
 interface TaskState {
     todos: Todo[]
-    completeTodo: (id: string) => void
+    toggleTodo: (id: string) => void
     addTodo: (newTodo: Todo) => void
     deleteTodo: (id: string) => void
 }
@@ -19,10 +19,12 @@ const useTodoStore = create<TaskState>()(
     persist(
         (set, get) => ({
             todos: [],
-            completeTodo: (id) =>
+            toggleTodo: (id) =>
                 set((state) => ({
                     todos: state.todos.map((todo) =>
-                        todo.id === id ? { ...todo, completed: true } : todo
+                        todo.id === id
+                            ? { ...todo, completed: !todo.completed }
+                            : todo
                     ),
                 })),
             addTodo: (newTodo) => set({ todos: [...get().todos, newTodo] }),
@@ -40,3 +42,4 @@ const useTodoStore = create<TaskState>()(
 export const useTodoList = () => useTodoStore((state) => state.todos)
 export const useAddTodo = () => useTodoStore((state) => state.addTodo)
 export const useDeleteTodo = () => useTodoStore((state) => state.deleteTodo)
+export const useToggleTodo = () => useTodoStore((state) => state.toggleTodo)

@@ -1,21 +1,65 @@
 'use client'
 
-import { useDeleteTodo, useTodoList } from '@/app/stores/task-store'
+import {
+    useDeleteTodo,
+    useTodoList,
+    useToggleTodo,
+} from '@/app/stores/task-store'
 import { Card } from '../ui/card'
 import { AddTask } from './add-task'
+import styles from '@/app/components/tasks/task-list.module.css'
+import { Check, Circle, X } from 'lucide-react'
+import { toast } from 'sonner'
 
 export function TaskList() {
     const tasks = useTodoList()
+    const toggleTodo = useToggleTodo()
     const deleteTodo = useDeleteTodo()
     return (
         <Card cardId="task-list">
+            <h3>Task List</h3>
             <AddTask />
-            {tasks.map((task) => (
-                <div key={task.id}>
-                    {task.name}
-                    <button onClick={() => deleteTodo(task.id)}>Delete</button>
-                </div>
-            ))}
+            <div className={styles.Tasks}>
+                {tasks.map((task) => (
+                    <div key={task.id} className={styles.Task}>
+                        <p
+                            className={
+                                task.completed ? styles.CompletedTask : ''
+                            }
+                        >
+                            {task.name}
+                        </p>
+                        <div>
+                            {task.completed ? (
+                                <Check
+                                    onClick={() => {
+                                        toggleTodo(task.id)
+                                        toast.success(
+                                            'Todo restored successfully'
+                                        )
+                                    }}
+                                />
+                            ) : (
+                                <Circle
+                                    onClick={() => {
+                                        toggleTodo(task.id)
+                                        toast.success(
+                                            'Todo completed successfully'
+                                        )
+                                    }}
+                                />
+                            )}
+
+                            <X
+                                onClick={() => {
+                                    deleteTodo(task.id)
+                                    toast.success('Todo deleted successfully')
+                                }}
+                            />
+                        </div>
+                    </div>
+                ))}
+            </div>
         </Card>
     )
 }

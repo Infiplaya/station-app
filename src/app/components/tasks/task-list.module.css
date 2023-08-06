@@ -1,0 +1,22 @@
+.Tasks {
+    margin-top: 2rem;
+}
+
+.DeleteButton {
+    color: red;
+    font-size: 5px;
+}
+
+.Task {
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.CompletedTask {
+    text-decoration: line-through;
+}

@@ -21,6 +21,8 @@ export function AddTask() {
             completed: false,
         })
         toast.success('New Todo was added!')
+        setName('')
+        setDescription('')
     }
     return (
         <Form.Root className={styles.FormRoot} onSubmit={handleSubmit}>
