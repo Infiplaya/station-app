@@ -8,7 +8,7 @@ interface BgImageState {
 
 export const bgOptions = [
     { url: '/anime-bg.png', label: 'Anime' },
-    { url: '/nature-bg.avif', label: 'Nature' },
+    { url: '/nature-bg.jpg', label: 'Nature' },
 ]
 
 const useImageStore = create<BgImageState>()(persist((set) => ({

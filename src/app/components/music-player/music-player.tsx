@@ -1,25 +1,32 @@
 'use client'
-import YouTube, { YouTubeProps } from 'react-youtube'
-import { useState } from 'react'
+import YouTube, { YouTubeProps, YouTubePlayer } from 'react-youtube'
+import { useEffect, useState } from 'react'
+import {
+    useAudioVolume,
+    useChangeCurrentSongId,
+    useChangeVolume,
+    useCurrentSongId,
+} from '@/app/stores/music-store'
+import { ControlVolume } from './control-volume'
+import { Pause, Play } from 'lucide-react'
 
-export function MusicPlayer({
-    id,
-    handlePlayerClick,
-    index,
-    activePlayer,
-    label,
-}: {
-    id: string
-    handlePlayerClick: (index: number) => void
-    index: number
-    activePlayer: number
-    label: string
-}) {
+export function MusicPlayer({ id, label }: { id: string; label: string }) {
     const [isPlaying, setIsPlaying] = useState(false)
+    const currentSongId = useCurrentSongId()
+    const changeCurrentId = useChangeCurrentSongId()
+    const audioVolume = useAudioVolume()
+    const [player, setPlayer] = useState<YouTubePlayer | null>(null)
+
+    const shouldPlaySong = isPlaying && id === currentSongId
+
+    const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+        event.target.setVolume(audioVolume)
+        setPlayer(event.target)
+    }
 
     const opts: YouTubeProps['opts'] = {
-        height: '390',
-        width: '640',
+        height: '500',
+        width: '600',
         playerVars: {
             autoplay: 1,
         },
@@ -27,27 +34,39 @@ export function MusicPlayer({
 
     function handlePlay() {
         setIsPlaying(true)
-        handlePlayerClick(index)
+        changeCurrentId(id)
     }
 
     function handleStop() {
         setIsPlaying(false)
-        handlePlayerClick(index)
+        changeCurrentId('')
+    }
+
+    if (shouldPlaySong) {
+        return (
+            <>
+                <h4>{label}</h4>
+                <button onClick={handleStop}>
+                    <Pause />
+                </button>
+                <ControlVolume player={player} />
+                {audioVolume}
+                <YouTube
+                    videoId={id}
+                    style={{ display: 'none' }}
+                    opts={opts}
+                    onReady={onPlayerReady}
+                />
+            </>
+        )
     }
 
     return (
         <>
-            {isPlaying && activePlayer == index ? (
-                <button onClick={handleStop}>Pause</button>
-            ) : (
-                <button onClick={handlePlay}>Play</button>
-            )}
-
-            <p>{label}</p>
-
-            {isPlaying && activePlayer == index ? (
-                <YouTube videoId={id} style={{ display: 'none' }} opts={opts} />
-            ) : null}
+            <h4>{label}</h4>
+            <button onClick={handlePlay}>
+                <Play />
+            </button>
         </>
     )
 }
