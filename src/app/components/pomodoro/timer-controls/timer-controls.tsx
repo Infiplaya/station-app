@@ -1,15 +1,30 @@
 'use client'
-import styles from "@/app/components/pomodoro/timer-controls/timer-controls.module.css"
+import styles from '@/app/components/pomodoro/timer-controls/timer-controls.module.css'
+import iconStyles from '@/app/page.module.css'
 
-import { useTimerActions} from '@/app/stores/pomodorostore'
+import { useTimerActions, useTimerActive } from '@/app/stores/pomodorostore'
+import { Pause, Play, TimerReset } from 'lucide-react'
 
 export function TimerControls() {
     const actions = useTimerActions()
+    const isActive = useTimerActive()
     return (
         <div className={styles.controls}>
-            <button onClick={actions.startTimer}>Start</button>
-            <button onClick={actions.pauseTimer}>Stop</button>
-            <button onClick={actions.resetTimer}>Reset</button>
+            {isActive ? (
+                <Pause
+                    onClick={actions.pauseTimer}
+                    className={iconStyles.icon}
+                />
+            ) : (
+                <Play
+                    onClick={actions.startTimer}
+                    className={iconStyles.icon}
+                />
+            )}
+            <TimerReset
+                onClick={actions.resetTimer}
+                className={iconStyles.icon}
+            />
         </div>
     )
 }

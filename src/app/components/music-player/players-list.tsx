@@ -4,7 +4,7 @@ import { MusicPlayer } from './music-player'
 
 export function MusicPlayersList() {
     return (
-        <Card>
+        <Card cardId="music-player">
             <h3>Play Something</h3>
             {youtubeIds.map((station, index) => (
                 <div key={station.id}>

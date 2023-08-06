@@ -13,7 +13,7 @@ export function Pomodoro() {
     const sessionCount = useTimerSessionCount()
     const status = useTimerStatus()
     return (
-        <Card>
+        <Card cardId="pomodoro">
             <Timer />
             <TimerControls />
             <div style={{ marginTop: '1rem' }}>
