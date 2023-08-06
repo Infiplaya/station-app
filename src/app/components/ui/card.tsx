@@ -3,7 +3,12 @@
 import styles from '@/app/page.module.css'
 import { ReactNode, useRef } from 'react'
 import { motion } from 'framer-motion'
+
 const INITIAL_POSITION = { x: 10, y: 10 }
+
+function isMobileDevice() {
+    return window.innerWidth <= 768
+}
 
 export function Card({
     children,
@@ -40,10 +45,10 @@ export function Card({
 
     return (
         <motion.div
-            drag
+            drag={!isMobileDevice()}
             ref={cardRef}
             className={styles.card}
-            initial={coordsObject}
+            initial={isMobileDevice() ? null : coordsObject}
             onDragEnd={handleDragEnd}
             dragMomentum={false}
         >

@@ -1,9 +1,11 @@
 'use client'
 
 import { useAddTodo } from '@/app/stores/task-store'
+import * as Form from '@radix-ui/react-form'
 import { FormEvent, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import styles from '@/app/components/tasks/add-task.module.css'
+import { toast } from 'sonner'
 
 export function AddTask() {
     const addTodo = useAddTodo()
@@ -18,35 +20,66 @@ export function AddTask() {
             description: description,
             completed: false,
         })
+        toast.success('New Todo was added!')
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <div className={styles.InputsWrapper}>
-                <fieldset>
-                    <label htmlFor="todo-name" className={styles.Label}>
-                        Name
-                    </label>
+        <Form.Root className={styles.FormRoot} onSubmit={handleSubmit}>
+            <Form.Field className={styles.FormField} name="new-task">
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}
+                >
+                    <Form.Label className={styles.FormLabel}>Name</Form.Label>
+                    <Form.Message
+                        className={styles.FormMessage}
+                        match="valueMissing"
+                    >
+                        Please enter task name
+                    </Form.Message>
+                </div>
+                <Form.Control asChild>
                     <input
-                        type="text"
                         className={styles.Input}
-                        id="todo-name"
+                        type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        required
                     />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="todo-description" className={styles.Label}>
+                </Form.Control>
+            </Form.Field>
+            <Form.Field className={styles.FormField} name="question">
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}
+                >
+                    <Form.Label className={styles.FormLabel}>
                         Description
-                    </label>
+                    </Form.Label>
+                    <Form.Message
+                        className={styles.FormMessage}
+                        match="valueMissing"
+                    >
+                        Please enter task description
+                    </Form.Message>
+                </div>
+                <Form.Control asChild>
                     <textarea
                         className={styles.Textarea}
-                        id="todo-description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
+                        required
                     />
-                </fieldset>
-            </div>
-            <button type="submit">Add Todo</button>
-        </form>
+                </Form.Control>
+            </Form.Field>
+            <Form.Submit asChild>
+                <button className="Button" style={{ marginTop: 10 }}>
+                    Add Task
+                </button>
+            </Form.Submit>
+        </Form.Root>
     )
 }

@@ -10,6 +10,7 @@ import { ControlVolume } from './control-volume/control-volume'
 import { Pause, Play } from 'lucide-react'
 import styles from '@/app/components/music-player/music-player.module.css'
 import iconStyles from '@/app/page.module.css'
+import { toast } from 'sonner'
 
 
 export function MusicPlayer({ id, label }: { id: string; label: string }) {
@@ -37,10 +38,12 @@ export function MusicPlayer({ id, label }: { id: string; label: string }) {
     function handlePlay() {
         setIsPlaying(true)
         changeCurrentId(id)
+        toast(`Started playing station ${label}`)
     }
 
     function handleStop() {
         setIsPlaying(false)
+        toast(`Stopped playing station ${label}`)
         changeCurrentId('')
     }
 

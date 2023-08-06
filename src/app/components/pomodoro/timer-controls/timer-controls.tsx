@@ -4,6 +4,7 @@ import iconStyles from '@/app/page.module.css'
 
 import { useTimerActions, useTimerActive } from '@/app/stores/pomodorostore'
 import { Pause, Play, TimerReset } from 'lucide-react'
+import { toast } from 'sonner'
 
 export function TimerControls() {
     const actions = useTimerActions()
@@ -12,17 +13,26 @@ export function TimerControls() {
         <div className={styles.controls}>
             {isActive ? (
                 <Pause
-                    onClick={actions.pauseTimer}
+                    onClick={() => {
+                        actions.pauseTimer()
+                        toast.success('Stopped pomodoro timer')
+                    }}
                     className={iconStyles.icon}
                 />
             ) : (
                 <Play
-                    onClick={actions.startTimer}
+                    onClick={() => {
+                        actions.startTimer()
+                        toast.success('Started pomodoro timer')
+                    }}
                     className={iconStyles.icon}
                 />
             )}
             <TimerReset
-                onClick={actions.resetTimer}
+                onClick={() => {
+                    actions.resetTimer()
+                    toast.success('Timer was reset')
+                }}
                 className={iconStyles.icon}
             />
         </div>

@@ -1,11 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Image from 'next/image'
 import { BackgroundImage } from './components/background-image'
-import { BgImageDropdown } from './components/dropdowns/bg-image-dropdown'
 import { Navbar } from './components/navbar'
 import HydrationZustand from './components/hydration-zustand'
+import { toast, Toaster } from 'sonner'
 
 const inter = Inter({ subsets: ['latin'] })
 

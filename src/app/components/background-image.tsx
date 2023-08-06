@@ -16,7 +16,6 @@ export function BackgroundImage() {
                 style={{ objectFit: 'cover' }}
                 alt="bg-image"
                 priority={true}
-                blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOUl5GpBwABkQDYW3A27QAAAABJRU5ErkJggg=="
             />
         </div>
     )
