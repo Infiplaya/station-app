@@ -32,6 +32,7 @@ export function TaskList() {
                         <div>
                             {task.completed ? (
                                 <Check
+                                    className={styles.icon}
                                     onClick={() => {
                                         toggleTodo(task.id)
                                         toast.success(
@@ -41,6 +42,7 @@ export function TaskList() {
                                 />
                             ) : (
                                 <Circle
+                                    className={styles.icon}
                                     onClick={() => {
                                         toggleTodo(task.id)
                                         toast.success(
@@ -51,6 +53,7 @@ export function TaskList() {
                             )}
 
                             <X
+                                className={styles.icon}
                                 onClick={() => {
                                     deleteTodo(task.id)
                                     toast.success('Todo deleted successfully')

@@ -1,4 +1,5 @@
 import { Toaster } from 'sonner'
+import { ControlVolume } from './components/music-player/control-volume/control-volume'
 import { MusicPlayersList } from './components/music-player/players-list'
 import { Pomodoro } from './components/pomodoro/pomodoro'
 import { PomodoroProgress } from './components/pomodoro/progress/progress'
@@ -9,6 +10,7 @@ export default function Home() {
     return (
         <main className={styles.main}>
             <PomodoroProgress />
+            <ControlVolume />
             <Pomodoro />
             <MusicPlayersList />
             <TaskList />
