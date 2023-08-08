@@ -1,0 +1,101 @@
+.DialogOverlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    inset: 0;
+    animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.SettingsButton {
+    background-color: rgba(var(--dark, 0.8));
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.SettingsButton:hover {
+    background-color: rgba(var(--dark-lighter, 0.8));
+}
+
+.DialogContent {
+    background-color: rgb(var(--bg));
+    border-radius: 6px;
+    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
+        hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 450px;
+    max-height: 85vh;
+    padding: 25px;
+    animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.DialogContent:focus {
+    outline: none;
+}
+
+.DialogTitle {
+    margin: 0;
+    font-weight: 500;
+    color: rgb(var(--dark));
+    font-size: 17px;
+}
+
+.DialogDescription {
+    margin: 10px 0 20px;
+    color: rgb(var(--dark));
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.IconButton {
+    font-family: inherit;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--gray));
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.IconButton:hover {
+    background-color: rgb(var(--dark-lighter));
+}
+.IconButton:focus {
+    box-shadow: 0 0 0 2px var(--gray);
+}
+
+@media (prefers-color-scheme: dark) {
+    .DialogTitle,
+    .DialogDescription {
+        color: rgb(var(--white));
+    }
+}
+
+@keyframes overlayShow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes contentShow {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

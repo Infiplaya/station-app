@@ -7,7 +7,8 @@ import {
     useChangeImage,
 } from '../../stores/bg-image-store'
 
-import styles from '@/app/components/dropdowns/bg-image-dropdown.module.css'
+import styles from '@/app/components/dropdowns/dropdown.module.css'
+import { Check } from 'lucide-react'
 
 export function BgImageDropdown() {
     const changeImage = useChangeImage()
@@ -22,17 +23,24 @@ export function BgImageDropdown() {
             <DropdownMenu.Portal>
                 <DropdownMenu.Content className={styles.dropdownContent}>
                     {bgOptions.map((option) => (
-                        <DropdownMenu.Item
-                            className={`${styles.dropdownItem} ${
-                                currentImage === option.url
-                                    ? styles.selectedItem
-                                    : null
-                            }`}
-                            key={option.url}
-                            onClick={() => changeImage(option.url)}
-                        >
-                            {option.label}
-                        </DropdownMenu.Item>
+                        <>
+                            <DropdownMenu.Item
+                                className={`${styles.dropdownItem} ${
+                                    currentImage === option.url
+                                        ? styles.selectedItem
+                                        : null
+                                }`}
+                                key={option.url}
+                                onClick={() => changeImage(option.url)}
+                            >
+                                <DropdownMenu.ItemIndicator
+                                    className={styles.dropdownMenuItemIndicator}
+                                >
+                                    <Check />
+                                </DropdownMenu.ItemIndicator>
+                                {option.label}
+                            </DropdownMenu.Item>
+                        </>
                     ))}
                 </DropdownMenu.Content>
             </DropdownMenu.Portal>
