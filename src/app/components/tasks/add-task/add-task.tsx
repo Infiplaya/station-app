@@ -4,7 +4,7 @@ import { useAddTodo } from '@/app/stores/task-store'
 import * as Form from '@radix-ui/react-form'
 import { FormEvent, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import styles from '@/app/components/tasks/add-task.module.css'
+import styles from '@/app/components/tasks/add-task/add-task.module.css'
 import { toast } from 'sonner'
 
 export function AddTask() {
