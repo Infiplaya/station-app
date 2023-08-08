@@ -5,15 +5,17 @@
         'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
         'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-    --primary-rgb: 110, 140, 255;
-    --gray-rgb: 226 232 240;
+    --gray: 226 232 240;
+    --blue: 10, 129, 209;
+    --lighter-blue: 38, 127, 186;
+    --white: 241, 246, 248;
+    --red: 255, 16, 31;
+    --dark: 18 16 14;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
+        --bg: 18 16 14;
     }
 }
 
@@ -45,8 +47,8 @@ body {
 }
 
 body {
-    color: white;
-    background: black;
+    color: rgb(var(--white));
+    background: rgb(var(--bg));
 }
 
 a {

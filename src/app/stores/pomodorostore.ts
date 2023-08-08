@@ -1,4 +1,3 @@
-import { toast } from 'sonner'
 import { create } from 'zustand'
 
 interface TimerState {
@@ -40,13 +39,13 @@ const useTimerStore = create<TimerState>()((set) => ({
         resetTimer: () =>
             set((state) => ({
                 isActive: false,
-                timer: state.status == 'break' ? DEFAULT_BREAK : DEFAULT_TIMER,
+                timer: state.status === 'break' ? DEFAULT_BREAK : DEFAULT_TIMER,
             })),
         skipTimer: () =>
             set((state) => ({
                 isActive: false,
-                timer: state.status == 'break' ? DEFAULT_TIMER : DEFAULT_BREAK,
-                status: state.status == 'break' ? 'work' : 'break',
+                timer: state.status === 'break' ? DEFAULT_TIMER : DEFAULT_BREAK,
+                status: state.status === 'break' ? 'work' : 'break',
             })),
         updateTimer: () => set((state) => ({ timer: state.timer - 1 })),
         updateSessionCount: () =>

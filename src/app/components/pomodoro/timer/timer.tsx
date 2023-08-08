@@ -31,8 +31,8 @@ export function Timer() {
             updateTimer()
         }, 1000)
 
-        if (timer == 0) {
-            if (status == 'break') {
+        if (timer === 0) {
+            if (status === 'break') {
                 startWork()
             } else {
                 startBreak()

@@ -24,7 +24,7 @@ export function BgImageDropdown() {
                     {bgOptions.map((option) => (
                         <DropdownMenu.Item
                             className={`${styles.dropdownItem} ${
-                                currentImage == option.url
+                                currentImage === option.url
                                     ? styles.selectedItem
                                     : null
                             }`}
