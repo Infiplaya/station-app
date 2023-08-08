@@ -33,11 +33,6 @@ export function BgImageDropdown() {
                                 key={option.url}
                                 onClick={() => changeImage(option.url)}
                             >
-                                <DropdownMenu.ItemIndicator
-                                    className={styles.dropdownMenuItemIndicator}
-                                >
-                                    <Check />
-                                </DropdownMenu.ItemIndicator>
                                 {option.label}
                             </DropdownMenu.Item>
                         </>
