@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useBgImage } from '../stores/bg-image-store'
-import styles from '@/app/page.module.css'
+import styles from '@/app/components/background-image.module.css'
 
 export function BackgroundImage() {
     const imageSrc = useBgImage()
@@ -12,7 +12,7 @@ export function BackgroundImage() {
             <Image
                 src={imageSrc}
                 fill={true}
-                quality={100}
+                quality={70}
                 style={{ objectFit: 'cover' }}
                 alt="bg-image"
                 priority={true}

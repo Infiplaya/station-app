@@ -1,23 +1,20 @@
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 import styles from '@/app/components/ui/button.module.css'
 
 type Variant = 'primary' | 'destructive'
 
-export function Button({
-    children,
-    variant = 'primary',
-}: {
-    children: ReactNode
+interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: Variant
-}) {
+}
+export function Button({ children, variant, ...rest }: CustomButtonProps) {
     return (
         <button
             className={`${styles.Button} ${
                 variant === 'destructive' ? styles.DestructiveButton : null
             }`}
+            {...rest}
         >
             {children}
         </button>
     )
 }
-

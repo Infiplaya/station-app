@@ -11,18 +11,18 @@
     background-color: rgba(0, 0, 0, 0.25);
 }
 
-
 .AlertDialogOverlay {
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     inset: 0;
     animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  .AlertDialogContent {
+}
+
+.AlertDialogContent {
     background-color: rgb(var(--bg));
     border-radius: 6px;
-    box-shadow: hsla(212, 9%, 66%, 0.1) 0px 10px 38px -10px, hsla(216, 2%, 51%, 0.1) 0px 10px 20px -15px;
+    box-shadow: hsla(212, 9%, 66%, 0.1) 0px 10px 38px -10px,
+        hsla(216, 2%, 51%, 0.1) 0px 10px 20px -15px;
     border: 1px solid rgb(85, 85, 85);
     position: fixed;
     top: 50%;
@@ -33,42 +33,48 @@
     max-height: 85vh;
     padding: 25px;
     animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .AlertDialogContent:focus {
+}
+.AlertDialogContent:focus {
     outline: none;
-  }
-  
-  .AlertDialogTitle {
+}
+
+.AlertDialogTitle {
+    color: rgb(var(--dark));
     margin: 0;
-    color: rgb(var(--white));
     font-size: 17px;
     font-weight: 500;
-  }
-  
-  .AlertDialogDescription {
+}
+
+.AlertDialogDescription {
     margin-bottom: 20px;
-    color: rgb(var(--white));
+    color: rgb(var(--dark));
     font-size: 15px;
     line-height: 1.5;
-  }
+}
 
-  @keyframes overlayShow {
+@keyframes overlayShow {
     from {
-      opacity: 0;
+        opacity: 0;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  @keyframes contentShow {
+}
+
+@keyframes contentShow {
     from {
-      opacity: 0;
-      transform: translate(-50%, -48%) scale(0.96);
+        opacity: 0;
+        transform: translate(-50%, -48%) scale(0.96);
     }
     to {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
     }
-  }
-  
+}
+
+@media (prefers-color-scheme: dark) {
+    .AlertDialogTitle,
+    .AlertDialogDescription {
+        color: rgb(var(--white));
+    }
+}

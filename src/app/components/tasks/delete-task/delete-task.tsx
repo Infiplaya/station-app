@@ -1,10 +1,11 @@
-
 import * as AlertDialog from '@radix-ui/react-alert-dialog'
 import { X } from 'lucide-react'
 import { Button } from '../../ui/button'
 import styles from '@/app/components/tasks/delete-task/delete-task.module.css'
+import { useDeleteTodo } from '@/app/stores/task-store'
 
-export default function DeleteTask() {
+export default function DeleteTask({ todoId }: { todoId: string }) {
+    const deleteTodo = useDeleteTodo()
     return (
         <AlertDialog.Root>
             <AlertDialog.Trigger asChild>
@@ -32,7 +33,12 @@ export default function DeleteTask() {
                             <Button>Cancel</Button>
                         </AlertDialog.Cancel>
                         <AlertDialog.Action asChild>
-                            <Button variant="destructive">Yes</Button>
+                            <Button
+                                variant="destructive"
+                                onClick={() => deleteTodo(todoId)}
+                            >
+                                Yes
+                            </Button>
                         </AlertDialog.Action>
                     </div>
                 </AlertDialog.Content>

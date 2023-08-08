@@ -15,7 +15,6 @@ import DeleteTask from './delete-task/delete-task'
 export function TaskList() {
     const tasks = useTodoList()
     const toggleTodo = useToggleTodo()
-    const deleteTodo = useDeleteTodo()
     return (
         <Card cardId="task-list">
             <h3>Task List</h3>
@@ -52,7 +51,7 @@ export function TaskList() {
                                     }}
                                 />
                             )}
-                            <DeleteTask />
+                            <DeleteTask todoId={task.id} />
                         </div>
                     </div>
                 ))}

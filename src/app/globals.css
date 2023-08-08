@@ -11,15 +11,15 @@
     --white: 241, 246, 248;
     --red: 255, 16, 31;
     --dark: 18 16 14;
+    --dark-lighter: 32 36 32;
+    --bg: 241, 246, 248
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: 18 16 14;
     }
-}
 
-@media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;
     }

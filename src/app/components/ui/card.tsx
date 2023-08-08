@@ -1,6 +1,6 @@
 'use client'
 
-import styles from '@/app/page.module.css'
+import styles from '@/app/components/ui/card.module.css'
 import { ReactNode, useRef } from 'react'
 import { motion } from 'framer-motion'
 

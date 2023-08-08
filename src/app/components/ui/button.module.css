@@ -2,18 +2,18 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 600;
-    color: rgb(var(--dark));
-    background-color: rgb(var(--white));
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     padding-left: 0.875rem;
     padding-right: 0.875rem;
     border-radius: 0.25rem;
     cursor: pointer;
+    color: rgb(var(--white));
+    background-color: rgb(var(--dark));
 }
 
 .Button:hover {
-    background-color: rgb(var(--gray));
+    background-color: rgb(var(--dark-lighter));
 }
 
 .DestructiveButton {
@@ -22,4 +22,24 @@
 
 .DestructiveButton:hover {
     background-color: #ef4444;
+}
+
+@media (prefers-color-scheme: dark) {
+    .Button {
+        color: rgb(var(--dark));
+        background-color: rgb(var(--white));
+    }
+
+    .Button:hover {
+        background-color: rgb(var(--gray));
+    }
+
+    .DestructiveButton {
+        background-color: #dc2626;
+    }
+    
+    .DestructiveButton:hover {
+        background-color: #ef4444;
+    }
+    
 }
