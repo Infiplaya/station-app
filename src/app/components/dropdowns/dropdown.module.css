@@ -1,4 +1,4 @@
-.dropdownButton {
+.DropdownButton {
     background-color: rgba(var(--dark, 0.95));
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -8,7 +8,7 @@
     transition: 0.2s;
 }
 
-.dropdownContent {
+.DropdownContent {
     min-width: 175px;
     background-color: rgba(var(--dark, 0.95));
     border-radius: 6px;
@@ -24,7 +24,7 @@
     margin-top: 0.5rem;
 }
 
-.dropdownItem {
+.DropdownItem {
     font-size: 13px;
     line-height: 1;
     border-radius: 3px;
@@ -38,7 +38,7 @@
     outline: none;
 }
 
-.dropdownItem[data-highlighted] {
+.DropdownItem[data-highlighted] {
     background-color: rgba(var(--dark-lighter, 0.8));
 }
 

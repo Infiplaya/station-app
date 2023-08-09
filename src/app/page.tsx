@@ -1,3 +1,4 @@
+import DailyQuote from './components/daily-quote/daily-quote';
 import { ControlVolume } from './components/music-player/control-volume/control-volume';
 import { MusicPlayersList } from './components/music-player/players-list';
 import { Pomodoro } from './components/pomodoro/pomodoro';
@@ -12,6 +13,8 @@ export default function Home() {
       <Pomodoro />
       <MusicPlayersList />
       <TaskList />
+      {/* @ts-expect-error Server Component */}
+      <DailyQuote />
     </main>
   );
 }

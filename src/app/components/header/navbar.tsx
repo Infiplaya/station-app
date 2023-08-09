@@ -4,8 +4,8 @@ import { Settings } from '../settings/settings'
 
 export function Navbar() {
     return (
-        <nav className={styles.navbar}>
-            <div className={styles.options}>
+        <nav className={styles.Navbar}>
+            <div className={styles.Options}>
                 <BgImageDropdown />
                 <Settings />
             </div>

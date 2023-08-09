@@ -8,7 +8,7 @@ export function BackgroundImage() {
     const imageSrc = useBgImage()
 
     return (
-        <div className={styles.bgImage}>
+        <div className={styles.BgImage}>
             <Image
                 src={imageSrc}
                 fill={true}

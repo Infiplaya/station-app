@@ -1,4 +1,4 @@
-.options {
+.Options {
     display: flex;
     margin-left: auto;
     width: max-content;
@@ -8,6 +8,6 @@
     align-items: center;
 }
 
-.navbar {
+.Navbar {
     width: 100%;
 }

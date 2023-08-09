@@ -8,7 +8,6 @@ import {
 } from '../../stores/bg-image-store'
 
 import styles from '@/app/components/dropdowns/dropdown.module.css'
-import { Check } from 'lucide-react'
 
 export function BgImageDropdown() {
     const changeImage = useChangeImage()
@@ -16,18 +15,18 @@ export function BgImageDropdown() {
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
-                <button className={styles.dropdownButton}>
+                <button className={styles.DropdownButton}>
                     Change Background
                 </button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Portal>
-                <DropdownMenu.Content className={styles.dropdownContent}>
+                <DropdownMenu.Content className={styles.DropdownContent}>
                     {bgOptions.map((option) => (
                         <>
                             <DropdownMenu.Item
                                 className={`${styles.dropdownItem} ${
                                     currentImage === option.url
-                                        ? styles.selectedItem
+                                        ? styles.SelectedItem
                                         : null
                                 }`}
                                 key={option.url}
