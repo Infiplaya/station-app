@@ -13,7 +13,6 @@ export default function Home() {
       <Pomodoro />
       <MusicPlayersList />
       <TaskList />
-      {/* @ts-expect-error Server Component */}
       <DailyQuote />
     </main>
   );
