@@ -2,7 +2,7 @@
 import styles from '@/app/components/pomodoro/timer-controls/timer-controls.module.css'
 import iconStyles from '@/app/page.module.css'
 
-import { useTimerActions, useTimerActive } from '@/app/stores/pomodorostore'
+import { useTimerActions, useTimerActive } from '@/app/stores/pomodoro-store'
 import { Pause, Play, TimerReset } from 'lucide-react'
 import { toast } from 'sonner'
 

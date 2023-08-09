@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useBgImage } from '../stores/bg-image-store'
-import styles from '@/app/components/background-image.module.css'
+import { useBgImage } from '@/app/stores/bg-image-store'
+import styles from '@/app/components/background-image/background-image.module.css'
 
 export function BackgroundImage() {
     const imageSrc = useBgImage()

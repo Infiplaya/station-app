@@ -4,7 +4,7 @@ import {
     useDefaultTimer,
     useTimer,
     useTimerActive,
-} from '@/app/stores/pomodorostore'
+} from '@/app/stores/pomodoro-store'
 import * as Progress from '@radix-ui/react-progress'
 import { useEffect, useState } from 'react'
 import styles from '@/app/components/pomodoro/progress/progress.module.css'

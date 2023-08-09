@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react'
-import styles from '@/app/components/ui/button.module.css'
+import { ButtonHTMLAttributes } from 'react'
+import styles from '@/app/components/ui/button/button.module.css'
 
 type Variant = 'primary' | 'destructive'
 

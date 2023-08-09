@@ -5,7 +5,7 @@ import {
     useTimerActions,
     useTimerActive,
     useTimerStatus,
-} from '@/app/stores/pomodorostore'
+} from '@/app/stores/pomodoro-store'
 import { SkipForward } from 'lucide-react'
 import { useEffect } from 'react'
 import styles from '@/app/components/pomodoro/timer/timer.module.css'

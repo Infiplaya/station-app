@@ -1,0 +1,12 @@
+.Icon {
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  transition: all;
+}
+
+.Icon:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}

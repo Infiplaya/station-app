@@ -1,64 +1,64 @@
 :root {
-    --max-width: 1100px;
-    --border-radius: 12px;
-    --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-        'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-        'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-    --gray: 226 232 240;
-    --blue: 10, 129, 209;
-    --lighter-blue: 38, 127, 186;
-    --white: 241, 246, 248;
-    --red: 255, 16, 31;
-    --dark: 18 16 14;
-    --dark-lighter: 26 26 26;
-    --bg: 241, 246, 248
+  --gray: 226 232 240;
+  --blue: 10, 129, 209;
+  --lighter-blue: 38, 127, 186;
+  --white: 241, 246, 248;
+  --red: 255, 16, 31;
+  --dark: 18 16 14;
+  --dark-lighter: 26 26 26;
+  --bg: 241, 246, 248;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg: 18 16 14;
-    }
+  :root {
+    --bg: 18 16 14;
+  }
 
-    html {
-        color-scheme: dark;
-    }
+  html {
+    color-scheme: dark;
+  }
 }
 
 button,
 input,
 fieldset,
 textarea {
-    all: unset;
-    all: unset;
-    box-sizing: border-box;
+  all: unset;
+  all: unset;
+  box-sizing: border-box;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
 body {
-    max-width: 100vw;
-    overflow: hidden;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 body {
-    color: rgb(var(--white));
-    background: rgb(var(--bg));
+  color: rgb(var(--white));
+  background: rgb(var(--bg));
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
-    html,
-    body {
-        overflow: visible;
-    }
+  html,
+  body {
+    overflow: visible;
+  }
 }
